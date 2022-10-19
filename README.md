@@ -60,6 +60,8 @@ Cada aluno/dupla deve apresentar uma proposta de projeto em formato _markdown_ d
 
 ![Quadro01](./Modelo.png)
 
+![Quadro02](./Base%20Interface%20JavaFX.png)
+
 #### Descrição do aplicativo
 
 1. O usuário seleciona no menu `File` um arquivo texto com os resultados do SISU na UFS em um determinado ano. 

@@ -1,10 +1,5 @@
 ---
 title: Temas dos trabalhos
-html:
-  embed_local_images: true
-export_on_save:
-    html: true
-id: "fichas"
 ---
 
 # Projeto final de Programação Orientada a Objetos

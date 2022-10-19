@@ -1,7 +1,3 @@
----
-title: Temas dos trabalhos
----
-
 # Projeto final de Programação Orientada a Objetos
 
 ### Descrição 

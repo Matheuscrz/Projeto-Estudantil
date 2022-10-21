@@ -26,6 +26,6 @@
     
     <a href = "mailto:matheuslimasof.eng@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 
-    <img src="https://img.shields.io/github/followers/Matheuscrz?style=for-the-badge" target="_blank">
+    <a href = "https://github.com/Matheuscrz"><img src="https://img.shields.io/github/followers/Matheuscrz?style=for-the-badge" target="_blank"></a>
     
-    <img src="https://img.shields.io/github/forks/Matheuscrz/Projeto-Estudantil?style=for-the-badge" target="_blank">
+    <a href = "https://github.com/Matheuscrz/Projeto-Estudantil"><img src="https://img.shields.io/github/forks/Matheuscrz/Projeto-Estudantil?style=for-the-badge" target="_blank"></a>s

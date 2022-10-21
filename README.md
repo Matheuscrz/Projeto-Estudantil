@@ -27,4 +27,4 @@
 
     Link Repositório [GitHub](https://github.com/Matheuscrz/Projeto-Estudantil)
 
-    [Contato](matheuslimasof.eng@gmail.com)
+    *[Contato](matheuslimasof.eng@gmail.com)*

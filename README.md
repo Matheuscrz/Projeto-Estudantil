@@ -28,4 +28,4 @@
 
     <a href = "https://github.com/Matheuscrz"><img src="https://img.shields.io/github/followers/Matheuscrz?style=for-the-badge" target="_blank"></a>
     
-    <a href = "https://github.com/Matheuscrz/Projeto-Estudantil"><img src="https://img.shields.io/github/forks/Matheuscrz/Projeto-Estudantil?style=for-the-badge" target="_blank"></a>s
+    <a href = "https://github.com/Matheuscrz/Projeto-Estudantil"><img src="https://img.shields.io/github/forks/Matheuscrz/Projeto-Estudantil?style=for-the-badge" target="_blank"></a>

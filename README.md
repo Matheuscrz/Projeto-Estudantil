@@ -12,6 +12,8 @@
 
 ![Quadro02]()
 
+---
+
 #### Descrição do aplicativo
 
 1. O usuário ira selecionar ou informar um caminho de um `File` de texto com os resultados do SISU na UFS de um determinado ano.
@@ -20,11 +22,10 @@
 
 3. Ao clicar no nome de algum curso, a aplicação calcula o histograma com a distribuição da quantidade de candidatos por faixa de pontuação.
 
-
-    Outros ...
-
     ---
+    
+    <a href = "mailto:matheuslimasof.eng@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 
-    Link Repositório [GitHub](https://github.com/Matheuscrz/Projeto-Estudantil)
-
-    *[Contato](matheuslimasof.eng@gmail.com)*
+    <img src="https://img.shields.io/github/followers/Matheuscrz?style=for-the-badge" target="_blank">
+    
+    <img src="https://img.shields.io/github/forks/Matheuscrz/Projeto-Estudantil?style=for-the-badge" target="_blank">

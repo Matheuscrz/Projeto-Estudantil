@@ -4,8 +4,8 @@ let chart = new Chart(ctx, {
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Candidatos por faixa de Pontuação',
+            data: [120, 190, 30, 50, 20, 30],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -35,17 +35,24 @@ let chart = new Chart(ctx, {
 });
 //Leitura do arquivo
 var dados = []
+var matricula = []
 var openFile = (event) => {
     var input = event.target
     var reader = new FileReader()
     reader.onload = () => {
         var text = reader.result
-        dados.push(text)
+        dados.push(text.split('\n'))
         process(dados)
     }
     reader.readAsText(input.files[0])
 }
-var process = (dados) => {
+var process = () => {
     
+}
+
+var calculo = (array) => {
+    var k = (array) => { return 1 + 3.3*Math.log(n) }
+    var At = (array) => { return array.reduce((a,b) => Math.max(a,b)) }
+    return (At/k).toFixed(2)
 }
 console.log(dados)

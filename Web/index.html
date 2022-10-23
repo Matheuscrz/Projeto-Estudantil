@@ -8,19 +8,15 @@
     <title>Graphics</title>
 </head>
 <body>
-    <div class="container">
-        <div class="input">
-                <input type="file" name="Arquivo" id="input">
-        </div>
-        <div class="row">
-            <div class="selection">
-                <h1>test</h>
-            </div>
-            <div class="output">
-                <h1>test</h1>
-            </div>  
-        </div>
+    <div class="input">
+        <input type="file" id="file" accept="text" onchange="openFile(event)">
+        <textarea name="Selection" id="selection" class="area" onclick="gerarGrafico()" disabled></textarea>
     </div>
+    <div class="container">
+        <canvas id="chart"></canvas>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="./assets/js/node_modules/chart.js/dist/chart.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

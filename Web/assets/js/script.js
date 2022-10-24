@@ -1,3 +1,37 @@
+//Variáveis de construção do gráfico
+const label = [] //Faixa de Pontuação
+const vagas = [] //Número de Vagas
+
+//Variáveis para processamento
+const data = []
+
+
+//Processamento dos dados
+const openFile = (event) => {
+    const input = event.target
+    const reader = new FileReader()
+    reader.onload = () => {
+        const text = reader.result
+        data.push(text.split('\n'))
+        
+    }
+    reader.readAsText(input.files[0])
+}
+//Calculo de intervalos
+const calculo = (array) => {
+    let k = 1 + 3.3*Math.log(array.length()) //Número de intervalos 
+    let At = Math.max(array) - Math.min(array) //Amplitude total
+    return (At/k).toFixed(2) //Retorna a amplitude de cada intervalo
+}
+//Formatação de dados para preenchimento de gráfico
+const labelGrafic = (valor) => {
+
+}
+const Ngrafico = (valor) => {
+    
+}
+
+//Construção do gráfico
 let ctx = document.getElementById('chart')
 let chart = new Chart(ctx, {
     type: 'bar',
@@ -33,26 +67,3 @@ let chart = new Chart(ctx, {
         }
     }
 });
-//Leitura do arquivo
-var dados = []
-var matricula = []
-var openFile = (event) => {
-    var input = event.target
-    var reader = new FileReader()
-    reader.onload = () => {
-        var text = reader.result
-        dados.push(text.split('\n'))
-        process(dados)
-    }
-    reader.readAsText(input.files[0])
-}
-var process = () => {
-    
-}
-
-var calculo = (array) => {
-    var k = (array) => { return 1 + 3.3*Math.log(n) }
-    var At = (array) => { return array.reduce((a,b) => Math.max(a,b)) }
-    return (At/k).toFixed(2)
-}
-console.log(dados)

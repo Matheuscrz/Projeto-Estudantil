@@ -9,6 +9,8 @@
   "author": "Matheus Lima da Cruz",
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^3.9.1"
+    "chart.js": "^3.9.1",
+    "csvtojson": "^2.0.10",
+    "json2csv": "^5.0.7"
   }
 }

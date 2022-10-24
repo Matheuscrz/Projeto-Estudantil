@@ -19,8 +19,8 @@ const openFile = (event) => {
 }
 //Calculo de intervalos
 const calculo = (array) => {
-    let k = 1 + 3.3*Math.log(array.length()) //Número de intervalos 
-    let At = Math.max(array) - Math.min(array) //Amplitude total
+    const k = 1 + 3.3*Math.log(array.length()) //Número de intervalos 
+    const At = Math.max(array) - Math.min(array) //Amplitude total
     return (At/k).toFixed(2) //Retorna a amplitude de cada intervalo
 }
 //Formatação de dados para preenchimento de gráfico
@@ -28,7 +28,7 @@ const labelGrafic = (valor) => {
 
 }
 const Ngrafico = (valor) => {
-    
+
 }
 
 //Construção do gráfico

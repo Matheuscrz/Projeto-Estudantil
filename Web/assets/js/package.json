@@ -11,6 +11,9 @@
   "dependencies": {
     "chart.js": "^3.9.1",
     "csvtojson": "^2.0.10",
-    "json2csv": "^5.0.7"
+    "fast-csv": "^4.3.6",
+    "jquery-csv": "^1.0.21",
+    "json2csv": "^5.0.7",
+    "papaparse": "^5.3.2"
   }
 }

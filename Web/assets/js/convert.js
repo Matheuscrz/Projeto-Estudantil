@@ -1,7 +1,7 @@
 const CSVToJSON = require("csvtojson")
 const JSONToCSV = require("json2csv")
 const FileSystem = require("fs")
-const path = "./Dados.csv"
+const path = document.querySelector('input')
 
 function convert (path) {
     CSVToJSON().fromFile(path).then(dados => {
@@ -11,3 +11,4 @@ function convert (path) {
         }) 
     })
 }
+convert(path)

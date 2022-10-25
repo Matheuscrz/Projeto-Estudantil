@@ -2,14 +2,37 @@ body{
     background: whitesmoke;
     padding: 15px;
 }
-canvas{
+#chart{
     border: 1px solid gainsboro;
     background: white;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    width: 800px !important;
+    height: 500px !important;
+
 }
 .container{
     position: relative;
     margin: auto;
     height: 400px;
-    width: 800px;
+    width: 1000px;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.input{
+    border: 1px solid gainsboro;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.center {
+    width: 1000px;
+    margin: 0 auto;
+  }
+#selection {
+    resize: none;
+    width: 200px;
+    margin-right: 10px;
 }

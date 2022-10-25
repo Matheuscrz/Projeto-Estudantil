@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Graphics</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Gráfico</title>
 </head>
 <body>
-    <div class="input">
-        <input type="file" id="file" accept="text" onchange="openFile(event)">
-        <textarea name="Selection" id="selection" class="area" onclick="gerarGrafico()" disabled></textarea>
+    <div class="center">
+        <div class="input">
+            <!-- <input type="file" id="file" accept="text" onchange="openFile(event)"> -->
+            <input type="file" id="input">
+        </div>
+        <div class="container"> 
+            <textarea name="Selection"s id="selection" class="area" onclick="gerarGrafico()" disabled></textarea>
+            <canvas id="chart"></canvas>
+        </div>
     </div>
-    <div class="container">
-        <canvas id="chart"></canvas>
-    </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src="./assets/js/node_modules/chart.js/dist/chart.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>

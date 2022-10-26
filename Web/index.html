@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">   
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"></script>
+    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    <link href="http://fonts.cdnfonts.com/css/poppins" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Gráficos</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="center">
-        <div class="search">
-            <h2 class="example-name">Gráficos UFS</h2>
-            <p class="example-description">Pesquise algum curso para obter o gráfico.</p>
-            <div class="selection">
-                <input class="typeahead" type="text" placeholder="Cursos" id="input"> 
-                <button class="process" onclick="process()">Gerar Gráfico</button>
-            </div> 
+      <div class="search">
+        <h2 class="example-name">Gráficos UFS</h2>
+        <p class="example-description">
+          Pesquise algum curso para obter o gráfico.
+        </p>
+        <div class="selection flex">
+          <input
+            class="typeahead"
+            type="text"
+            placeholder="Cursos"
+            id="input"
+          />
+          <button class="process" onclick="process()">Gerar Gráfico</button>
         </div>
-        <div class="container"> 
-            <canvas id="myChart"></canvas>
-        </div>
+      </div>
+      <div class="container">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,45 +1,85 @@
-body{
-    background: whitesmoke;
-    padding: 15px;
+* {
+  font-family: "Poppins";
 }
-.typeahead{
-    width: 396px;
-    height: 30px;
-    padding: 8px 12px;
-    font-size: 24px;
-    line-height: 30px;
-    border: 2px solid #ccc;
-    -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-            border-radius: 8px;
-    outline: none;
-    margin-bottom: 10px;
-    text-align: center;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+body {
+  background: whitesmoke;
+  padding: 15px;
 }
-#myChart{
-    border: 1px solid gainsboro;
-    background: white;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-    width: 1000px !important;
-    height: 500px !important;
-
+.typeahead {
+  width: 396px;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
-.container{
-    position: relative;
-    margin: auto;
-    height: 400px;
-    width: 1000px;
-    display: flex;
-    height: auto;
-    flex-direction: row;
-    justify-content: space-between;
+#myChart {
+  border: 1px solid gainsboro;
+  background: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  width: 1000px !important;
+  height: 500px !important;
+}
+.container {
+  position: relative;
+  margin: auto;
+  height: 400px;
+  width: 1000px;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .center {
-    width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .process {
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: #00ffff57;
+  margin-left: 10px;
+}
+.process:hover {
+  background-color: #00ffffd9;
+}
+.selection {
+  margin-bottom: 10px;
+}
+.tt-menu {
+  background: white;
+  border: 1px solid black;
+  margin-top: 0px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  text-align: left;
+  border-radius: 8px;
+}
+.tt-suggestion {
+  padding: 5px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tt-suggestion:hover,
+.tt-suggestion.tt-cursor {
+  cursor: pointer;
+  padding: 10px 15px;
 }

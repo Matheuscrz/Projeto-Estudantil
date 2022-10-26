@@ -1,7 +1,6 @@
 //Variáveis de construção do gráfico
-const label = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]; //Faixa de Pontuação
-const vagas = [1200, 1900, 300, 500, 200, 300]; //Número de Vagas
-const curse = "temp";
+var label = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]; //Faixa de Pontuação
+var vagas = [1200, 1900, 300, 500, 200, 300]; //Número de Vagas
 
 //TypeHead
 $(document).ready(function () {

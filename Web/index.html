@@ -9,16 +9,21 @@
 </head>
 <body>
     <div class="center">
-        <div class="input">
-            <!-- <input type="file" id="file" accept="text" onchange="openFile(event)"> -->
-            <input type="file" id="input">
+        <div class="search">
+            <h2 class="example-name">Gráficos UFS</h2>
+            <p class="example-description">Pesquise algum curso para obter o gráfico.</p>
+            <input class="typeahead" type="text" placeholder="Cursos" id="input">   
         </div>
+        <!-- <div class="input"> -->
+            <!-- <input type="file" id="file" accept="text" onchange="openFile(event)"> -->
+            <!-- <input type="file" id="input"> -->
+        <!-- </div> -->
         <div class="container"> 
-            <textarea name="Selection"s id="selection" class="area" onclick="gerarGrafico()" disabled></textarea>
+            <!-- <textarea name="Selection"s id="selection" class="area" onclick="gerarGrafico()" disabled></textarea> -->
             <canvas id="chart"></canvas>
         </div>
     </div>
-    <script src="./assets/js/node_modules/chart.js/dist/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

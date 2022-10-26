@@ -1,24 +1,46 @@
-// const Papa = require('papaparse')
 //Variáveis de construção do gráfico
 const label = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'] //Faixa de Pontuação
 const vagas = [1200, 1900, 300, 500, 200, 300] //Número de Vagas
 
-//Variáveis para processamento
-const data = []
-
-
-//Processamento dos dados
-// const openFile = (event) => {
-//     const input = event.target
-//     const reader = new FileReader()
-//     reader.onload = () => {
-//         const text = reader.result
-//         data.push(text.split('\n'))
-        
-//     }
-//     reader.readAsText(input.files[0])
-// }
-const input = document.querySelector('input')
+//TypeHead
+var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
+  
+      matches = [];
+  
+      substrRegex = new RegExp(q, 'i');
+  
+      $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+          matches.push(str);
+        }
+      });
+  
+      cb(matches);
+    };
+  };
+  
+  var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+    'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+    'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+    'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+    'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+    'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+    'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+  ];
+  
+  $('#the-basics .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  },
+  {
+    name: 'states',
+    source: substringMatcher(states)
+  });
 
 
 
@@ -28,16 +50,9 @@ const calculo = (array) => {
     const At = Math.max(array) - Math.min(array) //Amplitude total
     return (At/k).toFixed(2) //Retorna a amplitude de cada intervalo
 }
-//Formatação de dados para preenchimento de gráfico
-const labelGrafic = (array,valor) => {
 
-}
-const Ngrafico = (array,valor) => {
-
-}
-
-//Construção do gráfico
-let ctx = document.getElementById('chart')
+// Construção do gráfico
+let ctx = document.getElementById('chart').getContext('2d')
 let chart = new Chart(ctx, {
     type: 'bar',
     data: {

@@ -10,7 +10,7 @@
 
 - **Base da Interface Web - HTML/CSS/JS**
 
-![Quadro02](./Interface%20web.png)
+![Quadro02](./Interface%20Web.png)
 
 ---
 

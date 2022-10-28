@@ -76,8 +76,27 @@ const grafico = () => {
     },
   });
 };
-grafico();
+
+const test = () => {
+  // fetch("./Data/Data.json").then(async (res) => {
+  //   const data = await res.json();
+  // });
+};
 //Função que coletara os dados e irar gerar os gráficos
 const process = () => {
+  //Coleta de dados do Json
+  let cursos = [];
+  let notaCurso = [];
   var input = document.getElementById("input").value;
+  // fetch("./Data/Data.json").then(async (res) => {
+  //   const data = await res.json();
+  //   return Object.values(data);
+  // });
+  async function logJson() {
+    const resposta = await fetch("./Data/Data.json");
+    const json = await resposta.json();
+    return json;
+  }
+  console.log(logJson());
+  grafico();
 };

@@ -43,6 +43,7 @@ const nClasse = () => {
  */
 const notaFaixa = () => {
   nAluno.length = 0;
+  label.length = 0;
   let sup = []; //Variável auxiliar
   /**
    * Define que aux recebe o menor valor do array notas
@@ -106,9 +107,9 @@ const notaFaixa = () => {
  * @param {*} y
  * Monta o gráfico seguindo um padrão e modificando valores de acordo com a entrada
  */
-const grafico = (x, y) => {
+const grafico = () => {
   let ctx = document.getElementById("myChart").getContext("2d");
-  let chat = new Chart(ctx, {
+  let chart = new Chart(ctx, {
     type: "bar",
     data: {
       labels: label,
@@ -178,7 +179,7 @@ const process = () => {
   }
   Data();
   notaFaixa();
-  grafico(label, nAluno);
+  grafico();
 };
 
 /**

@@ -21,7 +21,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
- * @author matheuslima
+ * @author Matheuscrz
  */
 public class layout extends javax.swing.JFrame {
 
@@ -134,11 +134,18 @@ public class layout extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Ação não utilizada
+     * @param evt 
+     */
     private void dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dataActionPerformed
-
+    /**
+     * 
+     * @param evt 
+     * Executa todo o processo de chamada de funçôes e leitura de dados para gerar o Grafico e tratar erro.
+     */
     private void botaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoActionPerformed
         String curso = data.getText().toUpperCase();
         List<String> listCurse = new ArrayList<>(); //Lista que recebera todos cursos do JSON
@@ -194,7 +201,13 @@ public class layout extends javax.swing.JFrame {
         });
     }
     
-     //Função que gera uma lista de notas de um determinado curso passado
+    /**
+     * 
+     * @param data
+     * @param input
+     * @param aux 
+     * Função que gera uma lista que contém as notas correspondentes a uma key passada 
+     */
     private static void parserProgram(JSONObject data, String input, List<Double> aux){
         Double temp;
         if(input.equals(data.getOrDefault("CURSO", input))){
@@ -202,21 +215,38 @@ public class layout extends javax.swing.JFrame {
             aux.add(temp);
         }
     }
-    //Função que gera uma lista com todos os cursos armazenados no JSON
+    /**
+     * 
+     * @param data
+     * @param cursos 
+     * Cria uma lista de curso que será utilizada
+     */
     private static void listaCurso(JSONObject data, List<String> cursos){
         String auxS;
         auxS = (String) data.get("CURSO");
         cursos.add(auxS);
     }
-    //Função que verifica se o valor do input corresponde a algum curso
+    /**
+     * 
+     * @param cursos
+     * @param input
+     * @return Verfica se o valor de entrada corresponde a algum valor do banco de dados local
+     *
+     */
     private static boolean verificaCurso(List<String> cursos, String input){
         for(String value : cursos) {
             if(input.equals(value)) return true;
         }
         return false;
     }
-    //Função que retorna o Intervalo entre as classes
-    private static double Intervalo(List<Double> notas, int classes) {
+    /**
+     * 
+     * @param notas
+     * @param nClasse
+     * @return O valor do intervalo entre duas Classes 
+     * Utilizado soma as notas criando um intervalo de Classes
+     */
+    private static double Intervalo(List<Double> notas, int nClasse) {
         //Maior valor
         Double maxValue = 0d;
         for(Double value: notas){
@@ -228,11 +258,16 @@ public class layout extends javax.swing.JFrame {
             if(value < minValue) minValue = value;
         }
         //(Maior - Menor) / nClasses
-        double interv = (maxValue - minValue)/classes;
+        double interv = (maxValue - minValue)/nClasse;
         BigDecimal bd = new BigDecimal(interv).setScale(2, RoundingMode.HALF_EVEN);
         return bd.doubleValue();
     }
-    //Metodo que retorna o numero de classes do grafico
+    /**
+     * 
+     * @param notas
+     * @return O número de classes que compoe o Eixo X do grafico.
+     * Número de Colunas do Grafico
+     */
     private static int nClasses(List<Double> notas) {
         double prov = Math.round(Math.sqrt(notas.size()));
         return (int) prov;

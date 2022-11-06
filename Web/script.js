@@ -1,45 +1,86 @@
-//Variáveis de controle
-var label = []; //Faixa de Pontuação
-var nAluno = []; //Número de Alunos
+/**
+ * Variáveis de Controle para preenchimento de dados do gráfico
+ */
+var label = [];
+var nAluno = [];
 const curso = new Set(); //Objeto que recebe os cursos e elimina os repetidos
 const ListaCurso = []; //Lista de cursos para typehead
 const notas = []; //Armazena as notas do curso solicitado
-
-//Calculo de intervalos
+/**
+ * @param notas
+ * @param nClasse
+ * @return O valor de variação entre intervalos para calcular e gerar o preenchimento das colunas do eixo X
+ */
 const calculoIntervalo = () => {
+  /**
+   * @param notas
+   * @return O maior valor de um array
+   */
   const max = notas.reduce(function (prev, current) {
     return prev > current ? prev : current;
   });
+  /**
+   * @param notas
+   * @return O menor valor de um array
+   */
   const min = notas.reduce(function (prev, current) {
     return prev < current ? prev : current;
   });
-  return (max - min) / nClasse(); //Calculo de distribuição de frequência
+  return (max - min) / nClasse();
 };
-//Calculo do número de classes
+/**
+ * @param notas
+ * @return O número de classes que define quantas colunas o eixo X terá
+ */
 const nClasse = () => {
   return Math.round(Math.sqrt(notas.length));
 };
-//Função que processa os dados para montagem do gráfico
+/**
+ * @param notas
+ * @param nClasse
+ * @param nAluno
+ * @param calculoIntervalo
+ */
 const notaFaixa = () => {
   nAluno.length = 0;
-  let sup = [];
+  let sup = []; //Variável auxiliar
+  /**
+   * Define que aux recebe o menor valor do array notas
+   */
   let aux = notas.reduce((prev, current) => {
     return prev < current ? prev : current;
   });
   let temp = aux;
+  /**
+   * Para cada coluna do eixo X ele adiciona um valor arredondado em 2 casa decimais
+   * e itera sobre todos os valores em cada loop a variação entre intervalos
+   */
   for (let i = 0; i <= nClasse(); i++) {
     sup.push(temp.toFixed(2));
     temp = Number(aux) + Number(calculoIntervalo());
     aux += Number(calculoIntervalo());
   }
+  /**
+   * Define que intervalos recebe os valores do array sup convertidos em string
+   */
   let intervalos = sup.map((str) => {
     return Number(str);
   });
+  /**
+   * Formata e adiciona a variável de controle os dados do eixo X
+   */
   for (let i = 1; i < intervalos.length; i++) {
     label.push(`${intervalos[i - 1]} - ${intervalos[i]}`);
   }
+  /**
+   * Variáveis auxiliares
+   */
   let arrayAux = [];
   let array = [];
+  /**
+   * Faz a verificação de cada elemento dentro de notas e verifica se ele pertence a um determinado
+   * intervalo criando um array de arrays para armazena em cada array um valor que respeite uma condição
+   */
   for (let i = 0; i < intervalos.length; i++) {
     notas.forEach((element) => {
       if (
@@ -52,12 +93,19 @@ const notaFaixa = () => {
     array.push(arrayAux);
     arrayAux = [];
   }
+  /**
+   * Percorre o array auxiliar e adiciona o tamanho de cada array a o array nAluno que será responsável por gerar as barras do gráfico
+   */
   nAluno = array.map((x) => {
     return x.length;
   });
 };
-
-// Construção do gráfico
+/**
+ *
+ * @param {*} x
+ * @param {*} y
+ * Monta o gráfico seguindo um padrão e modificando valores de acordo com a entrada
+ */
 const grafico = (x, y) => {
   let ctx = document.getElementById("myChart").getContext("2d");
   let chat = new Chart(ctx, {
@@ -74,7 +122,8 @@ const grafico = (x, y) => {
             "rgba(255, 206, 86, 1)",
             "rgba(75, 192, 192, 1)",
             "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1))",
+            "rgba(255, 159, 64, 1)",
+            "rgba(156, 126, 131,1)",
           ],
           borderWidth: 1,
           borderColor: "#777",
@@ -93,7 +142,10 @@ const grafico = (x, y) => {
   });
 };
 
-//Função que cria um array para preenchimento de função do autocomplete
+/**
+ * Função assíncrona que ler o json e busca valores específicos(Key: "CURSO") e adiciona a um array
+ * que usaram como banco de dados para fornecer opções ao autocomplete
+ */
 async function logJson() {
   const resposta = await fetch("./Data/Data.json");
   const json = await resposta.json();
@@ -106,7 +158,10 @@ async function logJson() {
 }
 logJson();
 
-//Função que ira fazer a coleta de dados e executara todo o procedimento para geração do gráfico
+/**
+ * Função acionada por Aperto do botão, função principal que executará todos os processos e fará as chamadas das outras funções
+ * Composta por uma função assíncrona que ler o json e busca um dado especifico definido pelo input para preencher o array notas
+ */
 const process = () => {
   //Coleta de dados do Json
   var input = document.getElementById("input").value;
@@ -126,7 +181,10 @@ const process = () => {
   grafico(label, nAluno);
 };
 
-//TypeHead
+/**
+ * Função responsável pelo fornecimento de opções do autocomplete pegando através de JQuery os dados digitados no input
+ * e comparando letra a letra com um array de dados que serve como base dados, para fornecer as opções ao usuário
+ */
 $(document).ready(function () {
   var substringMatcher = function (strs) {
     return function findMatches(q, cb) {

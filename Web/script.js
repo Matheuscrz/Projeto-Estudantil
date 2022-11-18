@@ -148,7 +148,7 @@ const grafico = () => {
  * que usaram como banco de dados para fornecer opções ao autocomplete
  */
 async function logJson() {
-  const resposta = await fetch("./Data/Data.json");
+  const resposta = await fetch("./Data/Data.json", { mode: "cors" });
   const json = await resposta.json();
   json.forEach((element) => {
     curso.add(element.CURSO);
@@ -168,7 +168,7 @@ const process = () => {
   var input = document.getElementById("input").value;
   var curse = input.toUpperCase();
   async function Data() {
-    const resposta = await fetch("./Data/Data.json");
+    const resposta = await fetch("./Data/Data.json", { mode: "cors" });
     const json = await resposta.json();
     notas.length = 0;
     json.forEach((element) => {

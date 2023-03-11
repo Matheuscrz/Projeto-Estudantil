@@ -13,13 +13,6 @@
    ### Outros arquivos
 
    -`layout.fxml`: Arquivo base para interface gráfica JavaFx devido a diversos erros não solucionados foi finalizado.
-
-   #### Alguns Erros Ocorridos
-
-   ![Erro1](./Erro1.jpeg)
-   ![Erro2](./Erro2.png)
-   ![Erro3](./Erro03.png)
-
    ***
 
    <a href = "mailto:matheuslimasof.eng@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
